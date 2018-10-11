@@ -1,5 +1,6 @@
 package com.example.myapp.resource;
 
+import com.example.myapp.entity.Answer;
 import com.example.myapp.service.AnswerService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,7 +11,7 @@ import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
-@RestController("/answers")
+@RestController()
 public class AnswerResource {
     public AnswerResource (AnswerService answerService) {
         this.answerService = answerService;
@@ -18,9 +19,7 @@ public class AnswerResource {
 
     private AnswerService answerService;
 
-    @RequestMapping()
-    public List<String> getAll() { return answerService.getAll(); }
+    @RequestMapping("/answers")
+    public List<Answer> getAll() { return answerService.getAll(); }
 
-    @RequestMapping(method = POST)
-    public void create(@RequestBody String answer) { answerService.create(answer); }
 }
