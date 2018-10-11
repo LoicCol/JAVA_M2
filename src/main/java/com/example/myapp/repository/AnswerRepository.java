@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AnswerRepositoryItf extends JpaRepository<Answer, Long> {
+public interface AnswerRepository extends JpaRepository<Answer, Long> {
     @Override
     List<Answer> findAll();
 }
