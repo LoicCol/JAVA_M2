@@ -8,6 +8,15 @@ import javax.persistence.Id;
 public class Answer {
     @Id
     private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
     @GeneratedValue
     private String value;
 }
