@@ -18,4 +18,7 @@ public interface AnswerRepository extends JpaRepository<Answer, Long> {
 
     @Override
     <S extends Answer> S save(S s);
+
+    @Override
+    <S extends Answer> List<S> saveAll(Iterable<S> iterable);
 }
