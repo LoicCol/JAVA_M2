@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AnswerService {
@@ -19,4 +20,8 @@ public class AnswerService {
     public List<Answer> getAll() {
         return answerRepositoryItf.findAll();
     }
+
+    public Answer saveAnswer(Answer answer) { return answerRepositoryItf.save(answer); }
+
+    public Optional<Answer> findById(long id) { return answerRepositoryItf.findById(id); }
 }

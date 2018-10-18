@@ -7,9 +7,9 @@ import javax.persistence.Id;
 @Entity
 public class Answer {
     @Id
-    private int id;
+    private long id;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
